@@ -10,4 +10,9 @@ test project for yocto renrakukai
 - [Vagrant by HashiCorp](https://www.vagrantup.com/)
 
 ## Usage
-WIP ( ..)φ
+```sh
+$ git clone 
+$ cd yocto-test
+$ vagrant up
+$ vagrant ssh
+```

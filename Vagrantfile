@@ -28,29 +28,32 @@ Vagrant.configure("2") do |config|
     cd ~/yocto
     git clone git://git.yoctoproject.org/poky
     cd poky
-    git checkout -b gatesgarth-24.0.1 refs/tags/gatesgarth-24.0.1
+    #git checkout -b gatesgarth-24.0.1 refs/tags/gatesgarth-24.0.1
+    git checkout -b gatesgarth
 
     # add raspberrypi BSP
     cd ~/yocto/poky
     git clone git://git.yoctoproject.org/meta-raspberrypi
     cd meta-raspberrypi
-    git checkout -b gatesgarth origin/gatesgarth
+    #git checkout -b gatesgarth origin/gatesgarth
+    git checkout -b gatesgarth
 
     cd ~/yocto/poky
-    source oe-init-build-env rpi-build
+    source oe-init-build-env build
     bitbake-layers add-layer ../meta-raspberrypi/
 
     cd ~/yocto/poky
     git clone git://git.openembedded.org/meta-openembedded
     cd meta-openembedded
-    git checkout -b gatesgarth origin/gatesgarth
-    cd ~/yocto/poky/rpi-build
+    #git checkout -b gatesgarth origin/gatesgarth
+    git checkout -b gatesgarth
+    cd ~/yocto/poky/build
     bitbake-layers add-layer ../meta-openembedded/meta-oe/
     bitbake-layers add-layer ../meta-openembedded/meta-python/
     bitbake-layers add-layer ../meta-openembedded/meta-multimedia/
     bitbake-layers add-layer ../meta-openembedded/meta-networking/
 
-    cd ~/yocto/poky/rpi-build
+    cd ~/yocto/poky/build
     bitbake core-image-base
 
   SHELL
