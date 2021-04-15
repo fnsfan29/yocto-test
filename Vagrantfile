@@ -19,6 +19,9 @@ Vagrant.configure("2") do |config|
     build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
     xz-utils debianutils iputils-ping libsdl1.2-dev xterm
 
+    # static code analisis tool
+    sudo apt install -y splint
+
   SHELL
 
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
@@ -28,14 +31,12 @@ Vagrant.configure("2") do |config|
     cd ~/yocto
     git clone git://git.yoctoproject.org/poky
     cd poky
-    #git checkout -b gatesgarth-24.0.1 refs/tags/gatesgarth-24.0.1
     git checkout -b gatesgarth
 
     # add raspberrypi BSP
     cd ~/yocto/poky
     git clone git://git.yoctoproject.org/meta-raspberrypi
     cd meta-raspberrypi
-    #git checkout -b gatesgarth origin/gatesgarth
     git checkout -b gatesgarth
 
     cd ~/yocto/poky
@@ -45,7 +46,6 @@ Vagrant.configure("2") do |config|
     cd ~/yocto/poky
     git clone git://git.openembedded.org/meta-openembedded
     cd meta-openembedded
-    #git checkout -b gatesgarth origin/gatesgarth
     git checkout -b gatesgarth
     cd ~/yocto/poky/build
     bitbake-layers add-layer ../meta-openembedded/meta-oe/

@@ -11,8 +11,11 @@ test project for yocto renrakukai
 
 ## Usage
 ```sh
-$ git clone 
+$ git clone https://github.com/fnsfan29/yocto-test.git
 $ cd yocto-test
 $ vagrant up
 $ vagrant ssh
 ```
+
+## Static code analisis
+[Splint Home Page](http://splint.org/)
