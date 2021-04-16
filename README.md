@@ -17,5 +17,12 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-## Static code analisis
+## QEMU
+```sh
+$ cd ~/yocto/poky
+$ source oe-init-build-env build
+$ runqemu qemux86-64 nographic
+```
+
+## Static code analysis
 [Splint Home Page](http://splint.org/)
