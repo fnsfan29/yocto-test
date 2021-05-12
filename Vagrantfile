@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-18.04"
   config.vm.box_check_update = false
   config.vm.network :forwarded_port, guest: 22, host: 12222, id: "ssh"
+  config.disksize.size = "200GB"
   #config.vm.network "public_network"
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 4096
@@ -21,6 +22,9 @@ Vagrant.configure("2") do |config|
 
     # static code analisis tool
     sudo apt install -y splint
+
+    # disk size
+    /vagrant/env_u18.sh
 
   SHELL
 
