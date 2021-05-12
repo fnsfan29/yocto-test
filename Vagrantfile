@@ -53,6 +53,13 @@ Vagrant.configure("2") do |config|
     bitbake-layers add-layer ../meta-openembedded/meta-multimedia/
     bitbake-layers add-layer ../meta-openembedded/meta-networking/
 
+    # add test static analysis layer
+    cd ~/yocto/poky
+    git clone https://github.com/fnsfan29/meta-testsa.git
+    bitbake-layers add-layer meta-testsa
+    echo 'IMAGE_INSTALL_append = " helloworld"' >> build/conf/local.conf
+
+    # build
     cd ~/yocto/poky/build
     bitbake core-image-base
 
