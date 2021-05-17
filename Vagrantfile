@@ -21,7 +21,8 @@ Vagrant.configure("2") do |config|
     xz-utils debianutils iputils-ping libsdl1.2-dev xterm
 
     # static code analisis tool
-    sudo apt install -y splint nginx
+    sudo apt install -y splint cppcheck
+    sudo apt install -y nginx
 
   SHELL
 
