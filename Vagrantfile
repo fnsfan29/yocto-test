@@ -60,7 +60,6 @@ Vagrant.configure("2") do |config|
     git clone https://github.com/fnsfan29/meta-testsa.git
     cd ~/yocto/poky/build
     bitbake-layers add-layer ../meta-testsa
-    echo 'IMAGE_INSTALL_append = " helloworld"' >> conf/local.conf
 
     # build
     cd ~/yocto/poky/build
