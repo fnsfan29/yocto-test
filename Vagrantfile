@@ -23,6 +23,9 @@ Vagrant.configure("2") do |config|
     # static code analisis tool
     sudo apt install -y splint cppcheck
     sudo apt install -y nginx
+    sudo wget https://bootstrap.pypa.io/pip/2.7/get-pip.py -O get-pip.py
+    sudo python get-pip.py
+    sudo pip install pygments
 
   SHELL
 
